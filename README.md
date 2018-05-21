@@ -27,9 +27,17 @@ SSB](http://git.scuttlebot.io/%25VaSj08AbdhIa4itK4z8Z91G80o2h5OhRLCEEO6MhAcU%3D.
 
 Requirements:
 
-- [scuttlebot][]
+- [scuttlebot][] with adjusted max blobs config
 - [ssb-npm-registry][]
 - [git-ssb][]
+
+Scuttlebot's max blobs config must be adjusted to allow for the installation
+of patchfoo with `ssb-npm-registry` to complete, because of the size of native
+module dependencies. To do this, run sbot server with these options when you
+are going to do the install:
+`sbot server --blobs.max 30000000`
+Or put this in your `~/.ssb/config` to make the setting persist:
+`{"blobs":{"max":30000000}}`
 
 ```sh
 git clone ssb://%YAg1hicat+2GELjE2QJzDwlAWcx0ML+1sXEdsWwvdt8=.sha256 patchfoo
@@ -44,19 +52,21 @@ Alternatively, install as an sbot plugin (advanced):
 cd ~/.ssb/node_modules
 git clone ssb://%YAg1hicat+2GELjE2QJzDwlAWcx0ML+1sXEdsWwvdt8=.sha256 patchfoo
 cd patchfoo
-npm install
+npm install --registry=http://localhost:8043/
 sbot plugins.enable patchfoo
 # restart sbot
 ```
 
 ## Install extras
 
-To most effectively render things, patchfoo needs the `ssb-backlinks` scuttlebot
-plugin:
+To most effectively render things, patchfoo needs the `ssb-backlinks`
+and `ssb-private` scuttlebot plugins:
 
 ```sh
 sbot plugins.install ssb-backlinks
 sbot plugins.enable ssb-backlinks
+sbot plugins.install ssb-private
+sbot plugins.enable ssb-private
 # restart sbot
 ```
 
