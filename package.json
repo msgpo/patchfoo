@@ -29,7 +29,6 @@
     "pull-split": "^0.2.0",
     "pull-stream": "^3.5.0",
     "pull-utf8-decoder": "^1.0.2",
-    "ssb-contact": "^1.2.0",
     "ssb-git": "^0.7.0",
     "ssb-marked": "^0.7.1",
     "ssb-mentions": "^0.5.0",
