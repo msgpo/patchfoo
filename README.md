@@ -118,6 +118,12 @@ To make config options persistent, set them in `~/.ssb/config`, e.g.:
 [ssb-npm-registry]: %pFqjcdVKHqsrtOjVEAVZeCF0iY4s+3Hr0vA3EFCq5UM=.sha256
 [git-ssb]: %n92DiQh7ietE+R+X/I403LQoyf2DtR3WQfCkDKlheQU=.sha256
 
+## Certifications
+
+patchfoo received the [Troglodita Seal of Approval](https://ccom.uprrp.edu/~humberto/pages/troglodita.html) in %w+oNAm1KCYmh5iKs2OIBE2PdyJX52ZSmX6VqRHwVObc=.sha256
+
+> ![troglodita-med.jpg](&dGBjqrtI3jswU83CHyOQ1wwNtFhXcZkYfYSaV6jZT8U=.sha256)
+
 ## License
 
 Copyright (C) 2017 Secure Scuttlebutt Consortium
