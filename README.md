@@ -108,9 +108,7 @@ To make config options persistent, set them in `~/.ssb/config`, e.g.:
 
 ## TODO
 
-- Add a way to assist picking feed ids for `@mentions` in composer.
 - Add more sophisticated private messages view.
-- Show contents of git repos (cross-develop with [patchbay])
 - Count digs
 - Show network status
 - Add UI for using pub invites
