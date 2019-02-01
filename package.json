@@ -16,6 +16,7 @@
     "hyperscript": "^2.0.2",
     "jpeg-autorotate": "^3.0.0",
     "mime-types": "^2.1.12",
+    "mkdirp": "^0.5.1",
     "multicb": "^1.2.1",
     "private-box": "^0.3.0",
     "pull-box-stream": "^1.0.12",

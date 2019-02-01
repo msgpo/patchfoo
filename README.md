@@ -98,12 +98,14 @@ To make config options persistent, set them in `~/.ssb/config`, e.g.:
       "search"
       "live",
       "compose",
+      "drafts",
       "emojis",
       "self",
       "searchbox"
     ],
     "dir": "patchfoo",
-    "scriptDir": "script"
+    "scriptDir": "script",
+    "draftsDir": "drafts"
   }
 }
 ```
@@ -127,6 +129,7 @@ To make config options persistent, set them in `~/.ssb/config`, e.g.:
 - `nav`: array of nav links. Each item may be a string, object or special value. Special values are `"searchbox"` and `"self"`, which are the search field box, and link to the current feed id's page, respectively. Any other string is interpretted to be a link to the page of that name prefixed with a forward slash. An object may have properties `name` and `url`, and that will be interpretted as a link with given name and URL (with `toUrl` conversions applied). default is the list in the readme above.
 - `dir`: name of directory in `~/.ssb/` to use for patchfoo things. default: `"patchfoo"`.
 - `scriptDir: name of directory in patchfoo's directory (as set by `patchfoo.dir` config option above) to use for user scripts. default: `"script"`.
+- `draftsDir: name of directory in patchfoo's directory (as set by `patchfoo.dir` config option above) to use for message draft data. default: `"drafts"`.
 
 ## TODO
 
@@ -148,7 +151,7 @@ patchfoo received the [Troglodita Seal of Approval](https://ccom.uprrp.edu/~humb
 
 ## License
 
-Copyright (C) 2017 Secure Scuttlebutt Consortium
+Copyright (C) 2017-2019 Secure Scuttlebutt Consortium
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
