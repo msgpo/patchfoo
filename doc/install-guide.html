@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>ssb-npm + git-ssb + patchfoo install</title>
+<style>
+body {
+  font: 16pt sans-serif;
+}
+</style>
+</head>
+<body>
+<h2>Installing ssb-npm + git-ssb + patchfoo</h2>
+<p>cel 2019-02-25</p>
+
+<h3>Set up npm</h3>
+<p>If you haven't already done so, set a prefix for <code>npm</code> and add its bin directory to your <code>$PATH</code>:</p>
+<pre>
+echo prefix=$HOME/.local >> ~/.npmrc
+echo PATH=\$PATH:$HOME/.local/bin >> ~/.profile
+PATH=$PATH:$HOME/.local/bin
+</pre>
+
+<h3>Enable large ssb blobs</h3>
+<p>Put into <code>~/.ssb/config</code>:</p>
+<pre>
+{
+  "blobs": {
+    "max": 10000000
+  }
+}
+</pre>
+<p>Restart ssb-server or Patchwork.</p>
+
+<h3>Install ssb-npm</h3>
+<pre>
+mkdir -p /tmp/ssb-npm-registry-1.10.2 && cd /tmp/ssb-npm-registry-1.10.2 &&
+curl -s 'http://localhost:8989/blobs/get/&U7z22fE8SpMiwZMQtUdDvbRUQ9NHTAXdosjzcJD3j/I=.sha256' | tar xz &&
+./package/bootstrap/bin.js --ws-url http://localhost:8989 \
+  --branch %1WiEpn3ymmfO4n7k5Q7V3mIQUO4+v2nlFomxYZhPYyY=.sha256 \
+  -- install -g ssb-npm@1.7.1
+</pre>
+
+<h3>Install git-ssb</h3>
+<pre>
+ssb-npm install -g git-ssb@2.6.1 \
+  --branch %+GtKJu3CCEQlDzGmJbZaGP3yrJCEIvUbvBq3BpuoRmE=.sha256
+</pre>
+
+<h3>Clone and install patchfoo</h3>
+
+<h4>As a standalone program (ssb-client):</h4>
+<pre>
+git clone ssb://%YAg1hicat+2GELjE2QJzDwlAWcx0ML+1sXEdsWwvdt8=.sha256 patchfoo
+cd patchfoo
+ssb-npm install --branch %SizoOItHdaFQtoDkpX/r4KdOmum7BKEbnE9Rx/UWRAQ=.sha256
+npm start
+</pre>
+
+<h4>or as a sbot plugin:</h4>
+<pre>
+mkdir ~/.ssb/node_modules
+cd ~/.ssb/node_modules
+git clone ssb://%YAg1hicat+2GELjE2QJzDwlAWcx0ML+1sXEdsWwvdt8=.sha256 patchfoo
+cd patchfoo
+ssb-npm install --branch %SizoOItHdaFQtoDkpX/r4KdOmum7BKEbnE9Rx/UWRAQ=.sha256
+sbot plugins.install patchfoo
+</pre>
+<p>Restart ssb-server or Patchwork.</p>
+<p>Visit patchfoo at <a href="http://localhost:8027/">http://localhost:8027/</a>.</p>
+</body>
+</html>
