@@ -34,11 +34,11 @@ PATH=$PATH:$HOME/.local/bin
 
 <h3>Install ssb-npm</h3>
 <pre>
-mkdir -p /tmp/ssb-npm-registry-1.10.2 && cd /tmp/ssb-npm-registry-1.10.2 &&
-curl -s 'http://localhost:8989/blobs/get/&U7z22fE8SpMiwZMQtUdDvbRUQ9NHTAXdosjzcJD3j/I=.sha256' | tar xz &&
+mkdir -p /tmp/ssb-npm-registry-2.0.0 && cd /tmp/ssb-npm-registry-2.0.0 &&
+curl -s 'http://localhost:8989/blobs/get/&E+tZfD6eodncvEddM3QAfsmzTJ003jlPGsqFN5TO7sQ=.sha256' | tar xz &&
 ./package/bootstrap/bin.js --ws-url http://localhost:8989 \
-  --branch %1WiEpn3ymmfO4n7k5Q7V3mIQUO4+v2nlFomxYZhPYyY=.sha256 \
-  -- install -g ssb-npm@1.7.1
+  --branch %+bQCoFxCpd6SyFzjeKZOIbOtHW575oSq/AoSYMGGR3k=.sha256 \
+  -- install -g ssb-npm@2.0.0
 </pre>
 
 <h3>Install git-ssb</h3>
