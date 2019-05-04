@@ -101,6 +101,15 @@ pre {
   white-space: pre-wrap;
 }
 
+.task-list {
+  margin-left: 1em;
+  padding-left: 0;
+}
+
+.task-list-item {
+  list-style-type: none;
+}
+
 .ssb-id {
   font-size: .7em;
   color: #777;
