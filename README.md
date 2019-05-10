@@ -84,6 +84,7 @@ To make config options persistent, set them in `~/.ssb/config`, e.g.:
     "filter": "all",
     "showPrivates": true,
     "previewVotes": true,
+    "voteBranches": false,
     "ooo": true,
     "nav": [
       "new",
@@ -124,6 +125,7 @@ To make config options persistent, set them in `~/.ssb/config`, e.g.:
 - `showPrivates`: Whether or not to show private messages. Default is `true`. Overridden by `filter=all`.
 - `previewVotes`: Whether to preview creating votes/likes/digs (`true`) or publish them immediately (`false`). default: `false`
 - `previewContacts`: Whether to preview creating contact/(un)follow/block messages (`true`) or publish them immediately (`false`). default: `false`
+- `voteBranches`: whether to publish vote messages with thread `branch` and `root` properties, and include `vote` messages in `branch` properties of a posts. default: `false`.
 - `ooo`: if true, use `ssb-ooo` to try to fetch missing messages in threads. also can set per-request with query string `?ooo=1`. default: `false`
 `codeInTextareas`: if `true`, render markdown code blocks in textareas. if `false`, render them in `pre` tags. default: `false`
 - `nav`: array of nav links. Each item may be a string, object or special value. Special values are `"searchbox"` and `"self"`, which are the search field box, and link to the current feed id's page, respectively. Any other string is interpretted to be a link to the page of that name prefixed with a forward slash. An object may have properties `name` and `url`, and that will be interpretted as a link with given name and URL (with `toUrl` conversions applied). default is the list in the readme above.
